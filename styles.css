@@ -89,6 +89,10 @@ body img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: Overpass;
+}
+.hero header .logo {
+  cursor: pointer;
 }
 @media screen and (min-width: 1040px) {
   .hero header {
@@ -105,6 +109,39 @@ body img {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+  }
+  .hero header nav .pages span {
+    position: relative;
+  }
+  .hero header nav .pages span .dropdown {
+    opacity: 0;
+    position: absolute;
+    color: transparent;
+    transition: opacity 0.5s;
+    transform: translateX(-19px);
+    display: flex;
+    flex-direction: column;
+    left: 60%;
+    top: 45px;
+    transform: translateX(-50%);
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  .hero header nav .pages span .dropdown[open] {
+    color: black;
+    background: white;
+    animation: fade 0.5s ease;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 20px 40px #00000031;
+    opacity: 1 !important;
+  }
+  .hero header nav .pages span .dropdown a {
+    color: black;
+    line-height: 30px;
+  }
+  .hero header nav .pages span .dropdown a::after {
+    display: none;
   }
   .hero header nav .pages a {
     color: white;
@@ -138,12 +175,13 @@ body img {
 .hero header .hamburger {
   cursor: pointer;
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 740px) {
   .hero header .hamburger {
     display: none;
   }
 }
 .hero button {
+  font-family: Overpass;
   width: 125px;
   border-radius: 500px;
   border: 1px solid white;
@@ -157,6 +195,7 @@ body img {
   background-color: white;
 }
 .hero button.active {
+  font-family: Overpass;
   width: 125px;
   border-radius: 500px;
   border: 1px solid white;

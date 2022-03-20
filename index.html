@@ -15,12 +15,36 @@
         <div class="container">
 
             <header>
-                <img src="./assets/logo.svg" />
+                <img class="logo" src="./assets/logo.svg" />
                 <nav>
                     <span class="pages">
-                        <a href="#">Product</a>
-                        <a href="#">Company</a>
-                        <a href="#">Connect</a>
+                        <span>
+                            <a href="#">Product</a>
+                            <div class="dropdown">
+                                <a href="#">Overview</a>
+                                <a href="#">Pricing</a>
+                                <a href="#">Marketplace</a>
+                                <a href="#">Feature</a>
+                                <a href="#">Integrations</a>
+                            </div>
+                        </span>
+                        <span>
+                            <a href="#">Company</a>
+                            <div class="dropdown">
+                                <a href="#">About</a>
+                                <a href="#">Team</a>
+                                <a href="#">Blog</a>
+                                <a href="#">Careers</a>
+                            </div>
+                        </span>
+                        <span>
+                            <a href="#">Connect</a>
+                            <div class="dropdown">
+                                <a href="#">Contact</a>
+                                <a href="#">Newsletter</a>
+                                <a href="#">LinkedIn</a>
+                            </div>
+                        </span>
                     </span>
                     <span>
                         <button>Login</button>
@@ -141,6 +165,8 @@
             </div>
         </nav>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
