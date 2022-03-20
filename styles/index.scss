@@ -1,5 +1,11 @@
+$nav: 740;
+
 $desktop: "screen and (min-width: 380px)";
-$nav-limit: "screen and (min-width: 740px)";
+$nav-limit: "screen and (min-width: #{$nav}px)";
+$shared-section-limit: "screen and (min-width: #{$nav + 300}px)";
+// $shared-section-limit-plus: "screen and (min-width: #{$nav - 500}px)";
+
+$largest: "screen and (min-width: 1040px)";
 
 $light-font: white;
 $dark-font: #24242c;
@@ -13,12 +19,20 @@ $ff: Overpass;
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
 
 body {
+    // Not ideal to use overflow hidden here... I'd rather find out the root cause.. its the images..
+    overflow-x: hidden;
     h1,
     h2 {
         font-family: $ff;
         font-weight: lighter;
     }
     text-align: center;
+    @media #{$shared-section-limit} {
+        h2:not(.main),
+        p:not(.hero p) {
+            text-align: left;
+        }
+    }
     p {
         line-height: $lh;
         font-family: $ff;
@@ -40,9 +54,24 @@ body {
     padding: 0 $pd;
     max-width: 1200px;
     margin: 0 auto;
-    .multi-container {
-        div {
-            margin-bottom: 53px;
+    .section-layout {
+        @media #{$shared-section-limit} {
+            display: flex;
+            flex-direction: row-reverse;
+            &.reverse {
+                flex-direction: row;
+                height: 86vh;
+                align-items: center;
+            }
+            justify-content: space-between;
+        }
+        .multi-container {
+            @media #{$shared-section-limit} {
+                flex-basis: 50%;
+            }
+            div {
+                margin-bottom: 53px;
+            }
         }
     }
 }
@@ -67,6 +96,26 @@ body {
             color: white;
             border: 1px solid transparent;
         }
+    }
+}
+
+@mixin image-space($isReverse: false) {
+    &[desktop] {
+        display: none;
+    }
+    @media #{$shared-section-limit} {
+        &[desktop] {
+            display: initial;
+        }
+        &[mobile] {
+            display: none;
+        }
+        transform: translate(-572px, -274px) scale(0.8);
+        @if ($isReverse) {
+            transform: translate(-416px, -452px) scale(0.8);
+        }
+        padding-left: 50px;
+        position: absolute;
     }
 }
 
@@ -105,7 +154,7 @@ body {
         align-items: center;
         justify-content: space-between;
 
-        @media #{$nav-limit} {
+        @media #{$shared-section-limit} {
             justify-content: flex-start;
         }
         nav {
@@ -153,7 +202,7 @@ body {
         }
         .hamburger {
             cursor: pointer;
-            @media #{$nav-limit} {
+            @media #{$shared-section-limit} {
                 display: none;
             }
         }
@@ -172,9 +221,18 @@ section {
 
     &.one {
         img {
+            @include image-space();
+        }
+    }
+    &.three {
+        img {
+            @include image-space(true);
         }
     }
     &.state-of-art {
+        h2 {
+            font-size: 30px;
+        }
         color: $light-font;
         height: 90vh;
         margin-top: 165px;
@@ -187,8 +245,6 @@ section {
         border-bottom-left-radius: $br;
         border-top-right-radius: $br;
         .img-container {
-            img {
-            }
             transform: translate(-50%, -37%);
             position: absolute;
             margin: 0 auto;
