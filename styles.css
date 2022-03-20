@@ -58,11 +58,12 @@ body img {
 }
 .hero header {
   padding: 30px 0;
+  height: 107px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 740px) {
   .hero header {
     justify-content: flex-start;
   }
@@ -70,20 +71,47 @@ body img {
 .hero header nav {
   display: none;
 }
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 740px) {
   .hero header nav {
+    white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
   }
-  .hero header nav a {
-    padding-left: 20px;
+  .hero header nav .pages a {
+    color: white;
+    filter: grayscale(0.5);
+    margin: 0 20px;
+    text-decoration: none;
+    filter: contrast(0.7);
+  }
+  .hero header nav .pages a:hover {
+    filter: contrast(1);
+  }
+  .hero header nav .pages a::after {
+    transform-origin: center;
+    transition: all 0.5s;
+    content: "";
+    width: 10px;
+    height: 20px;
+    background: url("./assets/icon-arrow-dark.svg") no-repeat;
+    background-position: 0px 7px;
+    position: absolute;
+    right: -18px;
+  }
+  .hero header nav .pages a:focus {
+    filter: contrast(1);
+    text-decoration: underline;
+  }
+  .hero header nav .pages a:focus::after {
+    transform: rotate(-180deg);
   }
 }
 .hero header .hamburger {
   cursor: pointer;
 }
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 740px) {
   .hero header .hamburger {
     display: none;
   }
@@ -95,6 +123,11 @@ body img {
   padding: 13px;
   background-color: transparent;
   color: white;
+  cursor: pointer;
+}
+.hero button:hover {
+  color: #ff6462;
+  background-color: white;
 }
 .hero button.active {
   width: 125px;
@@ -103,8 +136,18 @@ body img {
   padding: 13px;
   background-color: transparent;
   color: white;
+  cursor: pointer;
   color: #ff6462;
   background-color: white;
+}
+.hero button.active:hover {
+  color: #ff6462;
+  background-color: white;
+}
+.hero button.active:hover {
+  background-color: #ff7b86;
+  color: white;
+  border: 1px solid transparent;
 }
 
 section {
@@ -137,4 +180,34 @@ section.state-of-art .content {
   section.state-of-art .content {
     top: 55%;
   }
+}
+
+footer {
+  background-color: #24242c;
+  border-top-right-radius: 91px;
+  padding-bottom: 50px;
+}
+footer img {
+  margin: 70px 0 60px;
+}
+footer nav {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+footer nav div {
+  margin-bottom: 23px;
+  display: flex;
+  flex-direction: column;
+}
+footer nav div .page {
+  margin-bottom: 33px;
+}
+footer nav a {
+  font-family: Overpass;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 13px;
+  margin: auto auto 13px;
+  width: fit-content;
 }

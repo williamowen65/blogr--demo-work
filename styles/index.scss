@@ -1,23 +1,27 @@
 $desktop: "screen and (min-width: 380px)";
+$nav-limit: "screen and (min-width: 740px)";
 
 $light-font: white;
-$dark-font: black;
+$dark-font: #24242c;
 $m: 20px;
 $lh: 28px;
 $br: 91px;
 $pd: 20px;
+
+$ff: Overpass;
+
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
 
 body {
     h1,
     h2 {
-        font-family: Overpass;
+        font-family: $ff;
         font-weight: lighter;
     }
     text-align: center;
     p {
         line-height: $lh;
-        font-family: Overpass;
+        font-family: $ff;
         font-weight: 300;
     }
     .img-scale {
@@ -48,9 +52,19 @@ body {
     padding: 13px;
     background-color: transparent;
     color: white;
+    cursor: pointer;
+    &:hover {
+        color: #ff6462;
+        background-color: white;
+    }
     @if ($type == "active") {
         color: #ff6462;
         background-color: white;
+        &:hover {
+            background-color: #ff7b86;
+            color: white;
+            border: 1px solid transparent;
+        }
     }
 }
 
@@ -63,10 +77,6 @@ body {
     position: relative;
     border-bottom-left-radius: $br;
     .container {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // height: 100%;
         .content {
             margin: 10vh 0 0;
             @media #{$desktop} {
@@ -87,26 +97,59 @@ body {
     }
     header {
         padding: 30px 0;
+        height: 107px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @media #{$desktop} {
+        @media #{$nav-limit} {
             justify-content: flex-start;
         }
         nav {
             display: none;
-            @media #{$desktop} {
+            @media #{$nav-limit} {
+                white-space: nowrap;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 width: 100%;
-                a {
-                    padding-left: $pd;
+                .pages {
+                    a {
+                        color: $light-font;
+                        filter: grayscale(0.5);
+                        margin: 0 $pd;
+                        text-decoration: none;
+                        filter: contrast(0.7);
+                        &:hover {
+                            filter: contrast(1);
+                        }
+
+                        &::after {
+                            transform-origin: center;
+                            transition: all 0.5s;
+                            content: "";
+                            width: 10px;
+                            height: 20px;
+                            background: url("./assets/icon-arrow-dark.svg")
+                                no-repeat;
+                            background-position: 0px 7px;
+                            position: absolute;
+                            right: -18px;
+                        }
+
+                        &:focus {
+                            filter: contrast(1);
+                            text-decoration: underline;
+                            &::after {
+                                transform: rotate(-180deg);
+                            }
+                        }
+                    }
                 }
             }
         }
         .hamburger {
             cursor: pointer;
-            @media #{$desktop} {
+            @media #{$nav-limit} {
                 display: none;
             }
         }
@@ -149,6 +192,36 @@ section {
                 top: 55%;
             }
             padding-right: $pd;
+        }
+    }
+}
+
+footer {
+    background-color: #24242c;
+    border-top-right-radius: $br;
+    padding-bottom: 50px;
+    img {
+        margin: 70px 0 60px;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        div {
+            margin-bottom: 23px;
+            display: flex;
+            flex-direction: column;
+            .page {
+                margin-bottom: 33px;
+            }
+        }
+        a {
+            font-family: $ff;
+            color: $light-font;
+            text-decoration: none;
+            margin-bottom: 13px;
+            margin: auto auto 13px;
+            width: fit-content;
         }
     }
 }
