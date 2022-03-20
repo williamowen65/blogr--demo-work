@@ -38,6 +38,8 @@ body {
 
 .container {
     padding: 0 $pd;
+    max-width: 1200px;
+    margin: 0 auto;
     .multi-container {
         div {
             margin-bottom: 53px;
@@ -76,6 +78,7 @@ body {
     height: 87vh;
     position: relative;
     border-bottom-left-radius: $br;
+    margin-bottom: 90px;
     .container {
         .content {
             margin: 10vh 0 0;
@@ -101,6 +104,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         @media #{$nav-limit} {
             justify-content: flex-start;
         }
@@ -182,16 +186,30 @@ section {
         background-position: 50% 122%;
         border-bottom-left-radius: $br;
         border-top-right-radius: $br;
-        img {
-            transform: translateY(-37%);
-        }
-        .content {
-            position: absolute;
-            top: 39%;
-            @media #{$desktop} {
-                top: 55%;
+        .img-container {
+            img {
             }
-            padding-right: $pd;
+            transform: translate(-50%, -37%);
+            position: absolute;
+            margin: 0 auto;
+            left: 50%;
+            top: 0;
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            .content {
+                // position: absolute;
+                // top: 39%;
+                transform: translateY(86px);
+                @media #{$desktop} {
+                    top: 55%;
+                }
+                // padding-right: $pd;
+            }
         }
     }
 }

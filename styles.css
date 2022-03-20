@@ -25,6 +25,8 @@ body img {
 
 .container {
   padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .container .multi-container div {
   margin-bottom: 53px;
@@ -37,6 +39,7 @@ body img {
   height: 87vh;
   position: relative;
   border-bottom-left-radius: 91px;
+  margin-bottom: 90px;
 }
 .hero .container .content {
   margin: 10vh 0 0;
@@ -168,16 +171,24 @@ section.state-of-art {
     margin-top: 256px;
   }
 }
-section.state-of-art img {
-  transform: translateY(-37%);
-}
-section.state-of-art .content {
+section.state-of-art .img-container {
+  transform: translate(-50%, -37%);
   position: absolute;
-  top: 39%;
-  padding-right: 20px;
+  margin: 0 auto;
+  left: 50%;
+  top: 0;
+  width: 100%;
+}
+section.state-of-art .container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+section.state-of-art .container .content {
+  transform: translateY(86px);
 }
 @media screen and (min-width: 380px) {
-  section.state-of-art .content {
+  section.state-of-art .container .content {
     top: 55%;
   }
 }
