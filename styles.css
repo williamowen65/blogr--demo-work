@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+body {
+  text-align: center;
+}
+body h1,
+body h2 {
+  font-family: Overpass;
+  font-weight: lighter;
+}
+body p {
+  line-height: 28px;
+  font-family: Overpass;
+  font-weight: 300;
+}
+body .img-scale {
+  overflow-x: hidden;
+}
+body .img-scale img {
+  transform: scale(1.2);
+  margin: 50px 0;
+}
+body img {
+  max-width: 100%;
+}
+
+.container {
+  padding: 0 20px;
+}
+.container .multi-container div {
+  margin-bottom: 53px;
+}
+
+.hero {
+  color: white;
+  background: url("./assets/bg-pattern-intro-mobile.svg") left, linear-gradient(-202deg, #ff8f71 40%, #ff3e55);
+  background-position: -341px -259px, 0px;
+  height: 87vh;
+  position: relative;
+  border-bottom-left-radius: 91px;
+}
+.hero .container .content {
+  margin: 10vh 0 0;
+}
+@media screen and (min-width: 380px) {
+  .hero .container .content {
+    margin: 19vh 0 0;
+  }
+}
+.hero .container .content .actions {
+  margin: 32px 0;
+}
+.hero .container .content .actions button {
+  cursor: pointer;
+}
+.hero h1 {
+  width: 90%;
+  margin: auto;
+}
+.hero header {
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (min-width: 380px) {
+  .hero header {
+    justify-content: flex-start;
+  }
+}
+.hero header nav {
+  display: none;
+}
+@media screen and (min-width: 380px) {
+  .hero header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .hero header nav a {
+    padding-left: 20px;
+  }
+}
+.hero header .hamburger {
+  cursor: pointer;
+}
+@media screen and (min-width: 380px) {
+  .hero header .hamburger {
+    display: none;
+  }
+}
+.hero button {
+  width: 125px;
+  border-radius: 500px;
+  border: 1px solid white;
+  padding: 13px;
+  background-color: transparent;
+  color: white;
+}
+.hero button.active {
+  width: 125px;
+  border-radius: 500px;
+  border: 1px solid white;
+  padding: 13px;
+  background-color: transparent;
+  color: white;
+  color: #ff6462;
+  background-color: white;
+}
+
+section {
+  margin-top: 58px;
+  position: relative;
+}
+section.state-of-art {
+  color: white;
+  height: 90vh;
+  margin-top: 165px;
+  background: no-repeat url("./assets/bg-pattern-circles.svg"), linear-gradient(180deg, #3f4164, #2c2d3f);
+  background-position: 50% 122%;
+  border-bottom-left-radius: 91px;
+  border-top-right-radius: 91px;
+}
+@media screen and (min-width: 380px) {
+  section.state-of-art {
+    margin-top: 256px;
+  }
+}
+section.state-of-art img {
+  transform: translateY(-37%);
+}
+section.state-of-art .content {
+  position: absolute;
+  top: 39%;
+  padding-right: 20px;
+}
+@media screen and (min-width: 380px) {
+  section.state-of-art .content {
+    top: 55%;
+  }
+}

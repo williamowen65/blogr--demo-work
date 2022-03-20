@@ -1,0 +1,12 @@
+{
+    "name": "project-files",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "style": "sass --no-source-map --watch styles/index.scss styles.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

@@ -1,0 +1,154 @@
+$desktop: "screen and (min-width: 380px)";
+
+$light-font: white;
+$dark-font: black;
+$m: 20px;
+$lh: 28px;
+$br: 91px;
+$pd: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+
+body {
+    h1,
+    h2 {
+        font-family: Overpass;
+        font-weight: lighter;
+    }
+    text-align: center;
+    p {
+        line-height: $lh;
+        font-family: Overpass;
+        font-weight: 300;
+    }
+    .img-scale {
+        overflow-x: hidden;
+        img {
+            transform: scale(1.2);
+            margin: 50px 0;
+        }
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+.container {
+    padding: 0 $pd;
+    .multi-container {
+        div {
+            margin-bottom: 53px;
+        }
+    }
+}
+
+@mixin button($type: "default") {
+    width: 125px;
+    border-radius: 500px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 13px;
+    background-color: transparent;
+    color: white;
+    @if ($type == "active") {
+        color: #ff6462;
+        background-color: white;
+    }
+}
+
+.hero {
+    color: $light-font;
+    background: url("./assets/bg-pattern-intro-mobile.svg") left,
+        linear-gradient(-202deg, #ff8f71 40%, #ff3e55);
+    background-position: -341px -259px, 0px;
+    height: 87vh;
+    position: relative;
+    border-bottom-left-radius: $br;
+    .container {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // height: 100%;
+        .content {
+            margin: 10vh 0 0;
+            @media #{$desktop} {
+                margin: 19vh 0 0;
+            }
+            .actions {
+                margin: 32px 0;
+                button {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    h1 {
+        width: 90%;
+        margin: auto;
+    }
+    header {
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media #{$desktop} {
+            justify-content: flex-start;
+        }
+        nav {
+            display: none;
+            @media #{$desktop} {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                a {
+                    padding-left: $pd;
+                }
+            }
+        }
+        .hamburger {
+            cursor: pointer;
+            @media #{$desktop} {
+                display: none;
+            }
+        }
+    }
+    button {
+        @include button();
+        &.active {
+            @include button("active");
+        }
+    }
+}
+
+section {
+    margin-top: 58px;
+    position: relative;
+
+    &.one {
+        img {
+        }
+    }
+    &.state-of-art {
+        color: $light-font;
+        height: 90vh;
+        margin-top: 165px;
+        @media #{$desktop} {
+            margin-top: 256px;
+        }
+        background: no-repeat url("./assets/bg-pattern-circles.svg"),
+            linear-gradient(180deg, hsl(237, 23%, 32%), hsl(237, 17%, 21%));
+        background-position: 50% 122%;
+        border-bottom-left-radius: $br;
+        border-top-right-radius: $br;
+        img {
+            transform: translateY(-37%);
+        }
+        .content {
+            position: absolute;
+            top: 39%;
+            @media #{$desktop} {
+                top: 55%;
+            }
+            padding-right: $pd;
+        }
+    }
+}
