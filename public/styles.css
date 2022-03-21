@@ -502,11 +502,11 @@ body img {
     border: 1px solid transparent;
   }
 }
-.hero header .hamburger {
+.hero header #hamburger {
   cursor: pointer;
 }
 @media screen and (min-width: 740px) {
-  .hero header .hamburger {
+  .hero header #hamburger {
     display: none;
   }
 }
