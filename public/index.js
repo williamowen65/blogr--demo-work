@@ -1,18 +1,21 @@
 const navLinks = document.querySelectorAll(".pages a:not(dialog a)");
-const innerNavLinks = document.querySelectorAll(".pages a:not(.pa)");
-
-console.log(innerNavLinks);
+let innerNavLinks = document.querySelectorAll(".pages a:not(.pages span > a)");
+innerNavLinks = Array.from(innerNavLinks);
+innerNavLinks.push(...document.querySelectorAll(".auth button"));
 
 navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
         const dialog = e.target.nextElementSibling;
-        dialog.setAttribute("open", "");
+        dialog?.setAttribute("open", "");
         setTimeout(() => {
             function ev(e) {
                 dialog.removeAttribute("open");
+                link.blur();
                 document.removeEventListener("click", ev);
             }
-            document.addEventListener("click", ev);
+            if (dialog?.hasAttribute("open")) {
+                document.addEventListener("click", ev);
+            }
         });
     });
 });
@@ -29,13 +32,17 @@ hamburger.addEventListener("click", () => {
             const y = nav.getBoundingClientRect().y;
             const y2 = nav.getBoundingClientRect().height + y;
             const cond = e.x > x && e.x < x2 && e.y > y && e.y < y2;
-            console.log(e.x, e.y);
-            console.log(x, x2, y, y2);
             if (!(e.x > x && e.x < x2 && e.y > y && e.y < y2)) {
                 nav.removeAttribute("open");
                 document.removeEventListener("click", ev);
             }
         }
         document.addEventListener("click", ev);
+    });
+});
+
+innerNavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        nav.removeAttribute("open");
     });
 });

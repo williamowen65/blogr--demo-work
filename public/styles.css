@@ -305,6 +305,7 @@ body img {
     padding: 10px 0;
     background: #eeeef0;
     width: 100%;
+    width: fit-content;
     margin: 0;
     transform: translateX(-50%);
     position: absolute;
