@@ -8,6 +8,11 @@ body h2 {
   font-family: Overpass;
   font-weight: lighter;
 }
+body h1.main,
+body h2.main {
+  font-size: 30px;
+  margin: 405x 0;
+}
 @media screen and (min-width: 1040px) {
   body h2:not(.main),
 body p:not(.hero p) {
@@ -34,6 +39,9 @@ body img {
   padding: 0 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+.container:not(.hero .container) {
+  margin: 141px auto;
 }
 @media screen and (min-width: 1040px) {
   .container .section-layout {
@@ -294,6 +302,7 @@ body img {
     position: relative;
     margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 0px;
     width: initial;
   }
   .hero header nav .pages span .dropdown {

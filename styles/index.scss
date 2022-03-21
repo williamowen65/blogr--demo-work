@@ -26,6 +26,10 @@ body {
     h2 {
         font-family: $ff;
         font-weight: lighter;
+        &.main {
+            font-size: 30px;
+            margin: 405x 0;
+        }
     }
     text-align: center;
     @media #{$shared-section-limit} {
@@ -55,6 +59,9 @@ body {
     padding: 0 $pd;
     max-width: 1200px;
     margin: 0 auto;
+    &:not(.hero .container) {
+        margin: 141px auto;
+    }
     .section-layout {
         @media #{$shared-section-limit} {
             display: flex;
@@ -155,6 +162,7 @@ body {
             margin-bottom: 20px;
             width: 100%;
             @if ($type == "desktop") {
+                margin-bottom: 0px;
                 width: initial;
             }
             .dropdown {
