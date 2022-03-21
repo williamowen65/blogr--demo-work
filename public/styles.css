@@ -66,12 +66,18 @@ body img {
 
 .hero {
   color: white;
-  background: url("./assets/bg-pattern-intro-mobile.svg") left, linear-gradient(-202deg, #ff8f71 40%, #ff3e55);
+  background: url("./assets/bg-pattern-intro-mobile.svg") left, linear-gradient(134deg, #ff8f71 46%, #ff3e55 120%);
   background-position: -341px -259px, 0px;
   height: 87vh;
   position: relative;
   border-bottom-left-radius: 91px;
   margin-bottom: 90px;
+}
+@media screen and (min-width: 740px) {
+  .hero {
+    background: url("./assets/bg-pattern-intro-desktop.svg") left, linear-gradient(86deg, #ff8f71 40%, #ff3e55);
+    background-position: -364px -1280px, 0px;
+  }
 }
 .hero .container .content {
   margin: 10vh 0 0;
@@ -123,6 +129,7 @@ body img {
     align-items: center;
     width: 100%;
     padding: 24px 20px;
+    box-shadow: 0px 20px 40px #00000031;
     flex-direction: column;
     z-index: 1;
     background: white;
@@ -293,6 +300,8 @@ body img {
     align-items: center;
     width: 100%;
     padding: 24px 20px;
+    box-shadow: 0px 20px 40px #00000031;
+    box-shadow: none;
   }
   .hero header nav .pages {
     display: flex;
@@ -638,6 +647,11 @@ section.state-of-art h2 {
 @media screen and (orientation: landscape) and (max-height: 390px) {
   section.state-of-art {
     height: 112vh;
+  }
+}
+@media screen and (min-width: 1040px) {
+  section.state-of-art {
+    background-position: -7%;
   }
 }
 @media screen and (orientation: landscape) and (max-height: 390px) {
