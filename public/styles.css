@@ -114,7 +114,7 @@ body img {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    display: flex;
+    padding: 24px 20px;
     flex-direction: column;
     z-index: 1;
     background: white;
@@ -125,30 +125,35 @@ body img {
     right: 19px;
     top: 116px;
   }
+  .hero header nav[open] .pages {
+    display: flex;
+    width: 100%;
+  }
   .hero header nav[open] .pages span {
     position: relative;
+    width: 100%;
   }
   .hero header nav[open] .pages span .dropdown {
     opacity: 0;
-    position: absolute;
+    height: 0;
     color: transparent;
     transition: opacity 0.5s;
-    transform: translateX(-19px);
     display: flex;
     flex-direction: column;
     left: 60%;
     top: 45px;
-    transform: translateX(-50%);
     align-items: flex-start;
     padding: 10px 0;
+    background: #eeeef0;
+    width: 100%;
   }
   .hero header nav[open] .pages span .dropdown[open] {
+    height: auto;
+    margin: 20px 0;
     color: black;
-    background: white;
     animation: fade 0.5s ease;
     border: none;
     border-radius: 5px;
-    box-shadow: 0px 20px 40px #00000031;
     opacity: 1 !important;
   }
   .hero header nav[open] .pages span .dropdown a {
@@ -179,14 +184,92 @@ body img {
   .hero header nav[open] .pages a:focus::after {
     transform: rotate(-180deg);
   }
-  .hero header nav[open] .pages {
+  .hero header nav[open] .auth {
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.247);
     display: flex;
+    align-items: center;
     flex-direction: column;
   }
-  .hero header nav[open] .auth {
-    width: 80%;
-    margin: 0 auto;
-    border-top: 1px solid black;
+  .hero header nav[open] .auth button {
+    font-family: Overpass;
+    width: 125px;
+    border-radius: 500px;
+    border: 1px solid white;
+    padding: 13px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    color: black;
+  }
+  .hero header nav[open] .auth button.signup {
+    background: transparent;
+  }
+}
+@media screen and (max-width: 739px) and (min-width: 380px) {
+  .hero header nav[open] .auth button {
+    margin: 0 5px;
+  }
+}
+@media screen and (max-width: 739px) {
+  .hero header nav[open] .auth button:hover {
+    color: #ff6462;
+    background-color: white;
+  }
+}
+@media screen and (max-width: 739px) {
+  .hero header nav[open] .auth button.signup {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(-172deg, #ff8f71, #ff3e55);
+  }
+}
+@media screen and (max-width: 739px) {
+  .hero header nav[open] .auth button.active {
+    font-family: Overpass;
+    width: 125px;
+    border-radius: 500px;
+    border: 1px solid white;
+    padding: 13px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    color: #ff6462;
+    background-color: white;
+    color: black;
+  }
+  .hero header nav[open] .auth button.active.signup {
+    background: transparent;
+  }
+}
+@media screen and (max-width: 739px) and (min-width: 380px) {
+  .hero header nav[open] .auth button.active {
+    margin: 0 5px;
+  }
+}
+@media screen and (max-width: 739px) {
+  .hero header nav[open] .auth button.active:hover {
+    color: #ff6462;
+    background-color: white;
+  }
+}
+@media screen and (max-width: 739px) {
+  .hero header nav[open] .auth button.active:hover {
+    background-color: #ff7b86;
+    color: white;
+    border: 1px solid transparent;
+  }
+}
+@media screen and (max-width: 739px) {
+  .hero header nav[open] .auth button.active.signup {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(-172deg, #ff8f71, #ff3e55);
+  }
+}
+@media screen and (max-width: 739px) {
+  .hero header nav[open] .pages {
     display: flex;
     flex-direction: column;
   }
@@ -198,31 +281,43 @@ body img {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 24px 20px;
+  }
+  .hero header nav .pages {
+    display: flex;
+    width: 100%;
   }
   .hero header nav .pages span {
     position: relative;
+    width: 100%;
+    width: initial;
   }
   .hero header nav .pages span .dropdown {
     opacity: 0;
-    position: absolute;
+    height: 0;
     color: transparent;
     transition: opacity 0.5s;
-    transform: translateX(-19px);
     display: flex;
     flex-direction: column;
     left: 60%;
     top: 45px;
-    transform: translateX(-50%);
     align-items: flex-start;
     padding: 10px 0;
+    background: #eeeef0;
+    width: 100%;
+    margin: 0;
+    transform: translateX(-50%);
+    position: absolute;
   }
   .hero header nav .pages span .dropdown[open] {
-    color: black;
+    height: auto;
+    margin: 20px 0;
+    box-shadow: 0px 20px 40px #00000031;
     background: white;
+    color: black;
     animation: fade 0.5s ease;
     border: none;
     border-radius: 5px;
-    box-shadow: 0px 20px 40px #00000031;
     opacity: 1 !important;
   }
   .hero header nav .pages span .dropdown a {
@@ -261,6 +356,151 @@ body img {
   .hero header nav .pages a:focus::after {
     transform: rotate(-180deg);
   }
+  .hero header nav .auth {
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.247);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: row;
+    border-top: none;
+    width: initial;
+  }
+  .hero header nav .auth button {
+    font-family: Overpass;
+    width: 125px;
+    border-radius: 500px;
+    border: 1px solid white;
+    padding: 13px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    color: black;
+    font-family: Overpass;
+    width: 125px;
+    border-radius: 500px;
+    border: 1px solid white;
+    padding: 13px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  }
+  .hero header nav .auth button.signup {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 740px) and (min-width: 380px) {
+  .hero header nav .auth button {
+    margin: 0 5px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button:hover {
+    color: #ff6462;
+    background-color: white;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.signup {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(-172deg, #ff8f71, #ff3e55);
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.active {
+    font-family: Overpass;
+    width: 125px;
+    border-radius: 500px;
+    border: 1px solid white;
+    padding: 13px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    color: #ff6462;
+    background-color: white;
+    color: black;
+  }
+  .hero header nav .auth button.active.signup {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 740px) and (min-width: 380px) {
+  .hero header nav .auth button.active {
+    margin: 0 5px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.active:hover {
+    color: #ff6462;
+    background-color: white;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.active:hover {
+    background-color: #ff7b86;
+    color: white;
+    border: 1px solid transparent;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.active.signup {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(-172deg, #ff8f71, #ff3e55);
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.signup {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 740px) and (min-width: 380px) {
+  .hero header nav .auth button {
+    margin: 0 5px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button:hover {
+    color: #ff6462;
+    background-color: white;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.active {
+    font-family: Overpass;
+    width: 125px;
+    border-radius: 500px;
+    border: 1px solid white;
+    padding: 13px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    color: #ff6462;
+    background-color: white;
+  }
+  .hero header nav .auth button.active.signup {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 740px) and (min-width: 380px) {
+  .hero header nav .auth button.active {
+    margin: 0 5px;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.active:hover {
+    color: #ff6462;
+    background-color: white;
+  }
+}
+@media screen and (min-width: 740px) {
+  .hero header nav .auth button.active:hover {
+    background-color: #ff7b86;
+    color: white;
+    border: 1px solid transparent;
+  }
 }
 .hero header .hamburger {
   cursor: pointer;
@@ -270,7 +510,7 @@ body img {
     display: none;
   }
 }
-.hero button {
+.hero .actions button {
   font-family: Overpass;
   width: 125px;
   border-radius: 500px;
@@ -280,16 +520,19 @@ body img {
   color: white;
   cursor: pointer;
 }
+.hero .actions button.signup {
+  background: transparent;
+}
 @media screen and (min-width: 380px) {
-  .hero button {
+  .hero .actions button {
     margin: 0 5px;
   }
 }
-.hero button:hover {
+.hero .actions button:hover {
   color: #ff6462;
   background-color: white;
 }
-.hero button.active {
+.hero .actions button.active {
   font-family: Overpass;
   width: 125px;
   border-radius: 500px;
@@ -301,16 +544,19 @@ body img {
   color: #ff6462;
   background-color: white;
 }
+.hero .actions button.active.signup {
+  background: transparent;
+}
 @media screen and (min-width: 380px) {
-  .hero button.active {
+  .hero .actions button.active {
     margin: 0 5px;
   }
 }
-.hero button.active:hover {
+.hero .actions button.active:hover {
   color: #ff6462;
   background-color: white;
 }
-.hero button.active:hover {
+.hero .actions button.active:hover {
   background-color: #ff7b86;
   color: white;
   border: 1px solid transparent;
