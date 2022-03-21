@@ -68,6 +68,11 @@ body img {
 .hero .container .content {
   margin: 10vh 0 0;
 }
+@media screen and (orientation: landscape) and (max-height: 390px) {
+  .hero .container .content {
+    margin: -13vh 0 0 !important;
+  }
+}
 @media screen and (min-width: 380px) {
   .hero .container .content {
     margin: 19vh 0 0;
@@ -190,6 +195,11 @@ body img {
   color: white;
   cursor: pointer;
 }
+@media screen and (min-width: 380px) {
+  .hero button {
+    margin: 0 5px;
+  }
+}
 .hero button:hover {
   color: #ff6462;
   background-color: white;
@@ -205,6 +215,11 @@ body img {
   cursor: pointer;
   color: #ff6462;
   background-color: white;
+}
+@media screen and (min-width: 380px) {
+  .hero button.active {
+    margin: 0 5px;
+  }
 }
 .hero button.active:hover {
   color: #ff6462;
@@ -256,7 +271,7 @@ section.three img[desktop] {
 section.state-of-art {
   color: white;
   height: 90vh;
-  margin-top: 165px;
+  margin-top: 240px;
   background: no-repeat url("./assets/bg-pattern-circles.svg"), linear-gradient(180deg, #3f4164, #2c2d3f);
   background-position: 50% 122%;
   border-bottom-left-radius: 91px;
@@ -265,9 +280,20 @@ section.state-of-art {
 section.state-of-art h2 {
   font-size: 30px;
 }
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 1040px) {
   section.state-of-art {
+    height: 49vh;
     margin-top: 256px;
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 390px) {
+  section.state-of-art {
+    height: 112vh;
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 390px) {
+  section.state-of-art {
+    background-position: 50% 97%;
   }
 }
 section.state-of-art .img-container {
@@ -278,17 +304,32 @@ section.state-of-art .img-container {
   top: 0;
   width: 100%;
 }
+@media screen and (min-width: 1040px) {
+  section.state-of-art .img-container {
+    transform: translateY(10px);
+    position: inherit;
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 390px) {
+  section.state-of-art .img-container img {
+    transform: translateY(-33px) scale(0.5);
+  }
+}
 section.state-of-art .container {
   display: flex;
   align-items: center;
   height: 100%;
 }
 section.state-of-art .container .content {
+  top: 39%;
   transform: translateY(86px);
 }
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 1040px) {
   section.state-of-art .container .content {
+    position: inherit;
+    transform: none;
     top: 55%;
+    flex-basis: 100%;
   }
 }
 
@@ -296,14 +337,33 @@ footer {
   background-color: #24242c;
   border-top-right-radius: 91px;
   padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 50px;
+  flex-direction: column;
+}
+@media screen and (min-width: 1040px) {
+  footer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 footer img {
-  margin: 70px 0 60px;
+  margin: 0px 100px 60px;
 }
 footer nav {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
   flex-direction: column;
+}
+@media screen and (min-width: 380px) {
+  footer nav {
+    align-items: flex-start;
+    flex-direction: row;
+  }
 }
 footer nav div {
   margin-bottom: 23px;

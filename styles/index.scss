@@ -1,5 +1,5 @@
 $nav: 740;
-
+$landscape: "screen and (orientation: landscape) and (max-height: 390px)";
 $desktop: "screen and (min-width: 380px)";
 $nav-limit: "screen and (min-width: #{$nav}px)";
 $shared-section-limit: "screen and (min-width: #{$nav + 300}px)";
@@ -85,6 +85,10 @@ body {
     background-color: transparent;
     color: white;
     cursor: pointer;
+    @media #{$desktop} {
+        margin: 0 5px;
+    }
+
     &:hover {
         color: #ff6462;
         background-color: white;
@@ -132,6 +136,9 @@ body {
     .container {
         .content {
             margin: 10vh 0 0;
+            @media #{$landscape} {
+                margin: -13vh 0 0 !important;
+            }
             @media #{$desktop} {
                 margin: 19vh 0 0;
             }
@@ -274,22 +281,41 @@ section {
         }
         color: $light-font;
         height: 90vh;
-        margin-top: 165px;
-        @media #{$desktop} {
+        margin-top: 240px;
+        @media #{$shared-section-limit} {
+            height: 49vh;
             margin-top: 256px;
         }
+        @media #{$landscape} {
+            height: 112vh;
+        }
+
         background: no-repeat url("./assets/bg-pattern-circles.svg"),
             linear-gradient(180deg, hsl(237, 23%, 32%), hsl(237, 17%, 21%));
         background-position: 50% 122%;
+        @media #{$landscape} {
+            background-position: 50% 97%;
+        }
+
         border-bottom-left-radius: $br;
         border-top-right-radius: $br;
         .img-container {
             transform: translate(-50%, -37%);
             position: absolute;
+            @media #{$shared-section-limit} {
+                transform: translateY(10px);
+                position: inherit;
+            }
+
             margin: 0 auto;
             left: 50%;
             top: 0;
             width: 100%;
+            img {
+                @media #{$landscape} {
+                    transform: translateY(-33px) scale(0.5);
+                }
+            }
         }
         .container {
             display: flex;
@@ -297,12 +323,15 @@ section {
             height: 100%;
 
             .content {
-                // position: absolute;
-                // top: 39%;
+                top: 39%;
                 transform: translateY(86px);
-                @media #{$desktop} {
+                @media #{$shared-section-limit} {
+                    position: inherit;
+                    transform: none;
                     top: 55%;
+                    flex-basis: 100%;
                 }
+
                 // padding-right: $pd;
             }
         }
@@ -313,16 +342,36 @@ footer {
     background-color: #24242c;
     border-top-right-radius: $br;
     padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // justify-content: center;
+    padding-top: 50px;
+    flex-direction: column;
+    @media #{$shared-section-limit} {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
     img {
-        margin: 70px 0 60px;
+        margin: 0px 100px 60px;
     }
     nav {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
         flex-direction: column;
+        @media #{$desktop} {
+            align-items: flex-start;
+            flex-direction: row;
+        }
+
         div {
+            // width: 190px;
             margin-bottom: 23px;
             display: flex;
+            // justify-content: space-around;
             flex-direction: column;
             .page {
                 margin-bottom: 33px;
