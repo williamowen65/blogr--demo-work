@@ -21,10 +21,13 @@ navLinks.forEach((link) => {
 });
 
 const hamburger = document.getElementById("hamburger");
+const close = document.getElementById("close");
 const nav = document.getElementById("nav");
 
 hamburger.addEventListener("click", () => {
     nav.setAttribute("open", "");
+    close.removeAttribute("hide");
+    hamburger.setAttribute("hide", "");
     setTimeout(() => {
         function ev(e) {
             const x = nav.getBoundingClientRect().x;
@@ -34,6 +37,8 @@ hamburger.addEventListener("click", () => {
             const cond = e.x > x && e.x < x2 && e.y > y && e.y < y2;
             if (!(e.x > x && e.x < x2 && e.y > y && e.y < y2)) {
                 nav.removeAttribute("open");
+                hamburger.removeAttribute("hide");
+                close.setAttribute("hide", "");
                 document.removeEventListener("click", ev);
             }
         }

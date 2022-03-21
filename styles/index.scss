@@ -95,7 +95,8 @@ body {
     color: white;
     cursor: pointer;
     &.signup {
-        background: transparent;
+        color: #ff6462;
+        background: white;
     }
     @media #{$desktop} {
         margin: 0 5px;
@@ -362,8 +363,13 @@ body {
                 @include nav-style("desktop");
             }
         }
-        #hamburger {
+
+        #hamburger,
+        #close {
             cursor: pointer;
+            &[hide] {
+                display: none;
+            }
             @media #{$nav-limit} {
                 display: none;
             }

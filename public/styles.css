@@ -222,7 +222,8 @@ body img {
     color: black;
   }
   .hero header nav[open] .auth button.signup {
-    background: transparent;
+    color: #ff6462;
+    background: white;
   }
 }
 @media screen and (max-width: 739px) and (min-width: 380px) {
@@ -258,7 +259,8 @@ body img {
     color: black;
   }
   .hero header nav[open] .auth button.active.signup {
-    background: transparent;
+    color: #ff6462;
+    background: white;
   }
 }
 @media screen and (max-width: 739px) and (min-width: 380px) {
@@ -414,7 +416,8 @@ body img {
     cursor: pointer;
   }
   .hero header nav .auth button.signup {
-    background: transparent;
+    color: #ff6462;
+    background: white;
   }
 }
 @media screen and (min-width: 740px) and (min-width: 380px) {
@@ -450,7 +453,8 @@ body img {
     color: black;
   }
   .hero header nav .auth button.active.signup {
-    background: transparent;
+    color: #ff6462;
+    background: white;
   }
 }
 @media screen and (min-width: 740px) and (min-width: 380px) {
@@ -480,7 +484,8 @@ body img {
 }
 @media screen and (min-width: 740px) {
   .hero header nav .auth button.signup {
-    background: transparent;
+    color: #ff6462;
+    background: white;
   }
 }
 @media screen and (min-width: 740px) and (min-width: 380px) {
@@ -508,7 +513,8 @@ body img {
     background-color: white;
   }
   .hero header nav .auth button.active.signup {
-    background: transparent;
+    color: #ff6462;
+    background: white;
   }
 }
 @media screen and (min-width: 740px) and (min-width: 380px) {
@@ -529,11 +535,17 @@ body img {
     border: 1px solid transparent;
   }
 }
-.hero header #hamburger {
+.hero header #hamburger,
+.hero header #close {
   cursor: pointer;
 }
+.hero header #hamburger[hide],
+.hero header #close[hide] {
+  display: none;
+}
 @media screen and (min-width: 740px) {
-  .hero header #hamburger {
+  .hero header #hamburger,
+.hero header #close {
     display: none;
   }
 }
@@ -548,7 +560,8 @@ body img {
   cursor: pointer;
 }
 .hero .actions button.signup {
-  background: transparent;
+  color: #ff6462;
+  background: white;
 }
 @media screen and (min-width: 380px) {
   .hero .actions button {
@@ -572,7 +585,8 @@ body img {
   background-color: white;
 }
 .hero .actions button.active.signup {
-  background: transparent;
+  color: #ff6462;
+  background: white;
 }
 @media screen and (min-width: 380px) {
   .hero .actions button.active {
