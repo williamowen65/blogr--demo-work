@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "style": "sass --no-source-map --watch styles/index.scss public/styles.css"
+        "style": "sass --watch styles/index.scss public/styles.css"
     },
     "keywords": [],
     "author": "",
