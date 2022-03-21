@@ -107,6 +107,90 @@ body img {
 .hero header nav {
   display: none;
 }
+@media screen and (max-width: 739px) {
+  .hero header nav[open] {
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background: white;
+    border-radius: 5px;
+    width: 87vw;
+    max-width: 254px;
+    position: absolute;
+    right: 19px;
+    top: 116px;
+  }
+  .hero header nav[open] .pages span {
+    position: relative;
+  }
+  .hero header nav[open] .pages span .dropdown {
+    opacity: 0;
+    position: absolute;
+    color: transparent;
+    transition: opacity 0.5s;
+    transform: translateX(-19px);
+    display: flex;
+    flex-direction: column;
+    left: 60%;
+    top: 45px;
+    transform: translateX(-50%);
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  .hero header nav[open] .pages span .dropdown[open] {
+    color: black;
+    background: white;
+    animation: fade 0.5s ease;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 20px 40px #00000031;
+    opacity: 1 !important;
+  }
+  .hero header nav[open] .pages span .dropdown a {
+    color: black;
+    line-height: 30px;
+  }
+  .hero header nav[open] .pages span .dropdown a::after {
+    display: none;
+  }
+  .hero header nav[open] .pages a {
+    color: black;
+    filter: grayscale(0.5);
+    margin: 0 20px;
+    text-decoration: none;
+    filter: contrast(0.7);
+  }
+  .hero header nav[open] .pages a::after {
+    transform-origin: center;
+    transition: all 0.5s;
+    content: "";
+    width: 10px;
+    height: 20px;
+    background: url("./assets/icon-arrow-dark.svg") no-repeat;
+    background-position: 0px 7px;
+    position: absolute;
+    right: -18px;
+  }
+  .hero header nav[open] .pages a:focus::after {
+    transform: rotate(-180deg);
+  }
+  .hero header nav[open] .pages {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero header nav[open] .auth {
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: column;
+  }
+}
 @media screen and (min-width: 740px) {
   .hero header nav {
     white-space: nowrap;
@@ -149,6 +233,7 @@ body img {
     display: none;
   }
   .hero header nav .pages a {
+    color: black;
     color: white;
     filter: grayscale(0.5);
     margin: 0 20px;
@@ -372,6 +457,7 @@ footer nav div {
 }
 footer nav div .page {
   margin-bottom: 33px;
+  font-weight: bold;
 }
 footer nav a {
   font-family: Overpass;
